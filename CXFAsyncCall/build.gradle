@@ -1,0 +1,52 @@
+project.ext {
+    springVersion = "4.0.0.BUILD-SNAPSHOT"
+    slf4jVersion = "1.7.6"
+    httpClientVersion = "4.3.2"
+    cxfVersion = "3.1.6"
+    cxfArtifacts = [
+            'cxf-rt-frontend-jaxws',
+            'cxf-rt-frontend-jaxrs',
+            'cxf-rt-transports-http',
+            'cxf-rt-rs-client',
+            'cxf-rt-rs-service-description',
+    ]
+}
+
+buildscript{
+    repositories{
+        jcenter()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'no.nils:wsdl2java:0.9'
+    }
+}
+
+apply plugin :'java'
+apply plugin :'no.nils.wsdl2java'
+
+repositories{
+    mavenCentral()
+}
+
+dependencies(){
+    cxfArtifacts.each { artifact ->
+        compile "org.apache.cxf:$artifact:$cxfVersion"
+    }
+    compile 'io.reactivex:rxjava:+'
+    compile 'com.google.code.gson:gson:+'
+    testCompile 'junit:junit:+'
+}
+
+wsdl2javaExt {
+    deleteGeneratedSourcesOnClean = true
+}
+
+wsdl2java{
+    wsdlsToGenerate = [
+            ['-p','pl.orange.gpon', '-autoNameResolution', '-xjc','-b', "$projectDir/src/main/resources/bingingfile.xml", "$projectDir/src/main/resources/wsdl/GPONInsider.wsdl"]
+    ]
+    generatedWsdlDir = file("$projectDir/generatedsources")
+    wsdlDir = file("$projectDir/src/main/resources/wsdl")
+    locale = Locale.FRANCE
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="LibraryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-05-01T10:48:56" hostname="atos-VirtualBox" time="4.812">
+  <properties/>
+  <testcase name="testSomeLibraryMethod" classname="LibraryTest" time="4.812"/>
+  <system-out><![CDATA[Test worker Server call 
+Test worker onNext GetInventoryDataResponse
+Test worker onNext 
+{
+  "error": {
+    "errorCode": "01000",
+    "errorDesc": "Usługa nie istnieje w Inventory."
+  },
+  "getInventoryDataCommon": {
+    "identifier": "NEO100000148608",
+    "identifierType": "DESIG_NUM",
+    "relatedServices": false,
+    "servicesDetails": true
+  }
+}
+Test worker onCompleted 
+]]></system-out>
+  <system-err><![CDATA[May 01, 2016 12:48:57 PM org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean buildServiceFromClass
+INFO: Creating Service {http://mp.channels.overlay.tp.atos.pl/}MpChannelService from class pl.orange.gpon.MpChannel
+]]></system-err>
+</testsuite>
