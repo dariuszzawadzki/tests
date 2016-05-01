@@ -22,13 +22,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="additionalData" maxOccurs="unbounded"&gt;
  *           &lt;simpleType&gt;
  *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *               &lt;enumeration value="getServiceOptionsData"/&gt;
- *               &lt;enumeration value="getWPServiceOptionsData"/&gt;
- *               &lt;enumeration value="getAdditionalServiceData"/&gt;
- *               &lt;enumeration value="getDambackData"/&gt;
- *               &lt;enumeration value="getMSOptionData"/&gt;
- *               &lt;enumeration value="getVasData"/&gt;
- *               &lt;enumeration value="getResourceData"/&gt;
+ *               &lt;maxLength value="25"/&gt;
  *             &lt;/restriction&gt;
  *           &lt;/simpleType&gt;
  *         &lt;/element&gt;
@@ -41,7 +35,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "AdditionalDataList", namespace = "http://inventorydata.req.dto.mp.channels.overlay.tp.atos.pl/", propOrder = {
+@XmlType(name = "AdditionalDataList", propOrder = {
     "additionalData"
 })
 public class AdditionalDataList {

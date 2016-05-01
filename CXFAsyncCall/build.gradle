@@ -46,7 +46,6 @@ wsdl2java{
     wsdlsToGenerate = [
             ['-p','pl.orange.gpon', '-autoNameResolution', '-xjc','-b', "$projectDir/src/main/resources/bingingfile.xml", "$projectDir/src/main/resources/wsdl/GPONInsider.wsdl"]
     ]
-    generatedWsdlDir = file("$projectDir/generatedsources")
-    wsdlDir = file("$projectDir/src/main/resources/wsdl")
-    locale = Locale.FRANCE
+    generatedWsdlDir = file("$projectDir/build/generatedsources")
+    wsdlDir = file("$projectDir/src/main/resources/wsdl")    
 }

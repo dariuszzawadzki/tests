@@ -24,46 +24,14 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _GetInventoryDataRequest_QNAME = new QName("http://inventorydata.req.dto.mp.channels.overlay.tp.atos.pl/", "getInventoryDataRequest");
     private final static QName _GetInventoryDataResponse_QNAME = new QName("http://inventorydata.rsp.dto.mp.channels.overlay.tp.atos.pl/", "getInventoryDataResponse");
+    private final static QName _GetInventoryDataRequest_QNAME = new QName("http://inventorydata.req.dto.mp.channels.overlay.tp.atos.pl/", "getInventoryDataRequest");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: pl.orange.gpon
      * 
      */
     public ObjectFactory() {
-    }
-
-    /**
-     * Create an instance of {@link GetInventoryDataRequest }
-     * 
-     */
-    public GetInventoryDataRequest createGetInventoryDataRequest() {
-        return new GetInventoryDataRequest();
-    }
-
-    /**
-     * Create an instance of {@link InvokerData }
-     * 
-     */
-    public InvokerData createInvokerData() {
-        return new InvokerData();
-    }
-
-    /**
-     * Create an instance of {@link GetInventoryDataCommon }
-     * 
-     */
-    public GetInventoryDataCommon createGetInventoryDataCommon() {
-        return new GetInventoryDataCommon();
-    }
-
-    /**
-     * Create an instance of {@link AdditionalDataList }
-     * 
-     */
-    public AdditionalDataList createAdditionalDataList() {
-        return new AdditionalDataList();
     }
 
     /**
@@ -83,19 +51,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetInventoryDataCommon2 }
+     * Create an instance of {@link GetInventoryDataCommon }
      * 
      */
-    public GetInventoryDataCommon2 createGetInventoryDataCommon2() {
-        return new GetInventoryDataCommon2();
+    public GetInventoryDataCommon createGetInventoryDataCommon() {
+        return new GetInventoryDataCommon();
     }
 
     /**
-     * Create an instance of {@link AdditionalDataList2 }
+     * Create an instance of {@link AdditionalDataList }
      * 
      */
-    public AdditionalDataList2 createAdditionalDataList2() {
-        return new AdditionalDataList2();
+    public AdditionalDataList createAdditionalDataList() {
+        return new AdditionalDataList();
     }
 
     /**
@@ -339,12 +307,35 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetInventoryDataRequest }{@code >}}
+     * Create an instance of {@link GetInventoryDataRequest }
      * 
      */
-    @XmlElementDecl(namespace = "http://inventorydata.req.dto.mp.channels.overlay.tp.atos.pl/", name = "getInventoryDataRequest")
-    public JAXBElement<GetInventoryDataRequest> createGetInventoryDataRequest(GetInventoryDataRequest value) {
-        return new JAXBElement<GetInventoryDataRequest>(_GetInventoryDataRequest_QNAME, GetInventoryDataRequest.class, null, value);
+    public GetInventoryDataRequest createGetInventoryDataRequest() {
+        return new GetInventoryDataRequest();
+    }
+
+    /**
+     * Create an instance of {@link InvokerData }
+     * 
+     */
+    public InvokerData createInvokerData() {
+        return new InvokerData();
+    }
+
+    /**
+     * Create an instance of {@link GetInventoryDataCommon2 }
+     * 
+     */
+    public GetInventoryDataCommon2 createGetInventoryDataCommon2() {
+        return new GetInventoryDataCommon2();
+    }
+
+    /**
+     * Create an instance of {@link AdditionalDataList2 }
+     * 
+     */
+    public AdditionalDataList2 createAdditionalDataList2() {
+        return new AdditionalDataList2();
     }
 
     /**
@@ -354,6 +345,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://inventorydata.rsp.dto.mp.channels.overlay.tp.atos.pl/", name = "getInventoryDataResponse")
     public JAXBElement<GetInventoryDataResponse> createGetInventoryDataResponse(GetInventoryDataResponse value) {
         return new JAXBElement<GetInventoryDataResponse>(_GetInventoryDataResponse_QNAME, GetInventoryDataResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetInventoryDataRequest }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://inventorydata.req.dto.mp.channels.overlay.tp.atos.pl/", name = "getInventoryDataRequest")
+    public JAXBElement<GetInventoryDataRequest> createGetInventoryDataRequest(GetInventoryDataRequest value) {
+        return new JAXBElement<GetInventoryDataRequest>(_GetInventoryDataRequest_QNAME, GetInventoryDataRequest.class, null, value);
     }
 
 }

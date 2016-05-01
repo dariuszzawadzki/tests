@@ -37,7 +37,7 @@ public class GetInventoryDataRequest {
     @XmlElement(required = true)
     protected InvokerData invokerData;
     @XmlElement(required = true)
-    protected GetInventoryDataCommon getInventoryDataCommon;
+    protected GetInventoryDataCommon2 getInventoryDataCommon;
 
     /**
      * Obtient la valeur de la propriété invokerData.
@@ -68,10 +68,10 @@ public class GetInventoryDataRequest {
      * 
      * @return
      *     possible object is
-     *     {@link GetInventoryDataCommon }
+     *     {@link GetInventoryDataCommon2 }
      *     
      */
-    public GetInventoryDataCommon getGetInventoryDataCommon() {
+    public GetInventoryDataCommon2 getGetInventoryDataCommon() {
         return getInventoryDataCommon;
     }
 
@@ -80,10 +80,10 @@ public class GetInventoryDataRequest {
      * 
      * @param value
      *     allowed object is
-     *     {@link GetInventoryDataCommon }
+     *     {@link GetInventoryDataCommon2 }
      *     
      */
-    public void setGetInventoryDataCommon(GetInventoryDataCommon value) {
+    public void setGetInventoryDataCommon(GetInventoryDataCommon2 value) {
         this.getInventoryDataCommon = value;
     }
 

@@ -51,7 +51,7 @@ public class GetInventoryDataResponse {
     @XmlElement(required = true)
     protected Error error;
     @XmlElement(required = true)
-    protected GetInventoryDataCommon2 getInventoryDataCommon;
+    protected GetInventoryDataCommon getInventoryDataCommon;
     protected List<CfsService> cfsService;
     protected DambackData dambackData;
     protected MSOptionData msOptionData;
@@ -88,10 +88,10 @@ public class GetInventoryDataResponse {
      * 
      * @return
      *     possible object is
-     *     {@link GetInventoryDataCommon2 }
+     *     {@link GetInventoryDataCommon }
      *     
      */
-    public GetInventoryDataCommon2 getGetInventoryDataCommon() {
+    public GetInventoryDataCommon getGetInventoryDataCommon() {
         return getInventoryDataCommon;
     }
 
@@ -100,10 +100,10 @@ public class GetInventoryDataResponse {
      * 
      * @param value
      *     allowed object is
-     *     {@link GetInventoryDataCommon2 }
+     *     {@link GetInventoryDataCommon }
      *     
      */
-    public void setGetInventoryDataCommon(GetInventoryDataCommon2 value) {
+    public void setGetInventoryDataCommon(GetInventoryDataCommon value) {
         this.getInventoryDataCommon = value;
     }
 

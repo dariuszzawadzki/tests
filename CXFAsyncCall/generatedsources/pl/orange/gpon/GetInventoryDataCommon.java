@@ -17,12 +17,24 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="identifier" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="identifierType" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="identifier"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *               &lt;maxLength value="15"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="identifierType"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *               &lt;maxLength value="20"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
  *         &lt;element name="relatedServices" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
  *         &lt;element name="servicesDetails" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
  *         &lt;element name="userOperatorId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="additionalDataList" type="{http://inventorydata.req.dto.mp.channels.overlay.tp.atos.pl/}AdditionalDataList" minOccurs="0"/&gt;
+ *         &lt;element name="additionalDataList" type="{http://inventorydata.rsp.dto.mp.channels.overlay.tp.atos.pl/}AdditionalDataList" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -32,7 +44,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "GetInventoryDataCommon", namespace = "http://inventorydata.req.dto.mp.channels.overlay.tp.atos.pl/", propOrder = {
+@XmlType(name = "GetInventoryDataCommon", propOrder = {
     "identifier",
     "identifierType",
     "relatedServices",
@@ -46,10 +58,8 @@ public class GetInventoryDataCommon {
     protected String identifier;
     @XmlElement(required = true)
     protected String identifierType;
-    @XmlElement(required = true, type = Boolean.class, nillable = true)
-    protected Boolean relatedServices;
-    @XmlElement(required = true, type = Boolean.class, nillable = true)
-    protected Boolean servicesDetails;
+    protected boolean relatedServices;
+    protected boolean servicesDetails;
     protected String userOperatorId;
     protected AdditionalDataList additionalDataList;
 
@@ -104,48 +114,32 @@ public class GetInventoryDataCommon {
     /**
      * Obtient la valeur de la propriété relatedServices.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
      */
-    public Boolean isRelatedServices() {
+    public boolean isRelatedServices() {
         return relatedServices;
     }
 
     /**
      * Définit la valeur de la propriété relatedServices.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
      */
-    public void setRelatedServices(Boolean value) {
+    public void setRelatedServices(boolean value) {
         this.relatedServices = value;
     }
 
     /**
      * Obtient la valeur de la propriété servicesDetails.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
      */
-    public Boolean isServicesDetails() {
+    public boolean isServicesDetails() {
         return servicesDetails;
     }
 
     /**
      * Définit la valeur de la propriété servicesDetails.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
      */
-    public void setServicesDetails(Boolean value) {
+    public void setServicesDetails(boolean value) {
         this.servicesDetails = value;
     }
 

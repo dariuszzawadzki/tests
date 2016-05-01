@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0"
+           targetNamespace="http://inventorydata.req.dto.mp.channels.overlay.tp.atos.pl/"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:reqmpdto="http://inventorydata.req.dto.mp.channels.overlay.tp.atos.pl/">
+    
+    <!-- ################################ REQUEST ######################################### -->
+    
+    <xs:complexType name="InvokerData">
+        <xs:sequence>
+            <xs:element name="invokerName" minOccurs="1" nillable="false">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="PP"/>
+                        <xs:enumeration value="OPUS"/>  <!-- since: E14-OSA-10 -->
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="GetInventoryDataCommon">
+        <xs:sequence>
+            <xs:element name="identifier" minOccurs="1" maxOccurs="1" type="xs:string"/>
+            <xs:element name="identifierType" minOccurs="1" maxOccurs="1" type="xs:string"/>
+            <xs:element name="relatedServices" type="xs:boolean" minOccurs="1" maxOccurs="1" nillable="true"/>
+            <xs:element name="servicesDetails" type="xs:boolean" minOccurs="1" maxOccurs="1" nillable="true"/>
+            <xs:element name="userOperatorId" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="additionalDataList" type="reqmpdto:AdditionalDataList" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="GetInventoryDataRequest">
+        <xs:sequence>
+            <xs:element name="invokerData" type="reqmpdto:InvokerData" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="getInventoryDataCommon" type="reqmpdto:GetInventoryDataCommon" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="AdditionalDataList">
+        <xs:sequence>
+            <xs:element name="additionalData" minOccurs="1" maxOccurs="unbounded">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="getServiceOptionsData"/>
+                        <xs:enumeration value="getWPServiceOptionsData"/>
+                        <xs:enumeration value="getAdditionalServiceData"/>
+                        <xs:enumeration value="getDambackData"/>
+                        <xs:enumeration value="getMSOptionData"/>
+                        <xs:enumeration value="getVasData"/>
+                        <xs:enumeration value="getResourceData"/> <!-- since: E14-OSA-10 -->
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="getInventoryDataRequest" type="reqmpdto:GetInventoryDataRequest"/>
+    
+    <!-- ################################ END OF REQUEST ##################################### -->
+    
+</xs:schema>

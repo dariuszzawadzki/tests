@@ -10,6 +10,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import pl.orange.gpon.GetInventoryDataCommon;
+import pl.orange.gpon.GetInventoryDataCommon2;
 import pl.orange.gpon.GetInventoryDataRequest;
 import pl.orange.gpon.GetInventoryDataResponse;
 import pl.orange.gpon.InvokerData;
@@ -69,7 +70,7 @@ public class LibraryTest {
 			id.setInvokerName("PP");
 			testRequest.setInvokerData(id);
 
-			GetInventoryDataCommon idc = new GetInventoryDataCommon();
+			GetInventoryDataCommon2 idc = new GetInventoryDataCommon2();
 			testRequest.setGetInventoryDataCommon(idc);
 			idc.setIdentifier("NEO100000148608");
 			idc.setIdentifierType("DESIG_NUM");
